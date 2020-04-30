@@ -1,7 +1,7 @@
-## Preamble
+## 前言
 当我们引入$v_\pi(s)$或者$q_\pi(s,a)$这样的符号时候，我们考虑的是离散的表格化数据。实际生活中，s可能数目多到难以列举，一种极端就是s是连续的。所以如何基于之前的现有理论，将其拓展，以处理大规模强化学习问题，是本lecture要讨论的问题。解决方法标题给出了：Value Function Approximation。
 
-#### Introduction
+#### 介绍
 Large-Scale Reinforcement Learning Problems，e.g.
 - Game of Go：$10^{170}$ states
 - Backgammon: $10^{20}$ states
@@ -14,7 +14,7 @@ $\hat{v}(s,\vec{w})\approx v_\pi(s)$
 $\hat{q}(s,a,\vec{w})\approx q_\pi(s,a)$
 表达近似函数，我们有很多方法，主要考虑常用的线性模型和神经网络。
 
-#### Incremental Methods
+#### 增量方法（Incremental Methods）
 **Gradient Descent**
 - 我们定义目标函数$J(\vec{w})$来代表当前参数产生的误差之和
 - 梯度(gradient):
@@ -56,7 +56,7 @@ SGD一般来说比标准GD会获得更好的解，尤其是在训练数据庞大
 - Policy improvement: $\epsilon$-Greedy policy improvement
 注：这里的近似策略评估仍然指在采到有限的数据后，更新值函数之后就立刻提升策略，例如MC中，仍然可以是一条轨迹一次提升的迭代周期。
 
-####Batch Methods
+####批次方法（Batch Methods）
 个人理解Batch Method是为了保证训练的收敛性和效率提出的一种思路，他需要维护一个数据库来存储智能体的历史经验，这和Incremental Methods中得到一条经验更新参数之后就丢掉是一种对立的做法，他的优势就在于可以重复利用环境的信息。
 
 **Least Squares Prediction**
@@ -86,6 +86,5 @@ DQN的系列算法还有很多种，如：
 
 感兴趣都可以参阅有关paper。
 
-未完待续...
 
 
